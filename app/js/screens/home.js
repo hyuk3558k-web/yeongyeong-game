@@ -7,7 +7,7 @@ import { isDue, MAX_BOX } from '../scheduler.js';
 import { displayStreak, newIntroducedToday } from '../storage.js';
 import { openParentGate } from './parent.js';
 import {
-  currentPlanLesson, nextDay, canStartNewDay, describeDay, lessonWordsSorted, emptyPlan, PLAN_DAYS,
+  currentPlanLesson, nextDay, canStartNewDay, describeDay, lessonWordsSorted, emptyPlan, PLAN_DAYS, daysDoneOn,
 } from '../plan.js';
 
 // 5일 계획 진행 표시 (완료 ✓ / 오늘 / 남음)
@@ -26,27 +26,48 @@ function planCard(app, lesson, today) {
   const plan = app.state.plans[lesson.id] ?? emptyPlan();
   const lessonWords = lessonWordsSorted(app.words, lesson.id);
   const day = nextDay(plan);
-  const can = canStartNewDay(plan, today);
+  const doneToday = daysDoneOn(app.state.plans, today);
+  const can = canStartNewDay(plan, today, doneToday);
   const lastDone = plan.completedDays.at(-1);
+  const replayToday = plan.lastDayDate === today ? lastDone : null;
   const ctx = { plan, progress: app.state.words, rng: createRng(today) };
+  const d = describeDay(day, lessonWords, ctx);
+  const header = h('div', { class: 'badge-label' }, `Lesson ${lesson.order} · ${lesson.title}`);
+  const stamp = h('div', { class: 'stamp small done-stamp-mini' }, `오늘 ${doneToday}개`, h('br'), '완료');
+  const reviewBtn = h('button', { class: 'btn sky small', onclick: () => app.go('quiz', { kind: 'daily' }) }, '복습 한 판 더');
+  const replayBtn = replayToday
+    ? h('button', { class: 'btn white small', onclick: () => app.go('quiz', { kind: 'plan', lessonId: lesson.id, day: replayToday, replay: true }) }, `${replayToday}일차 다시 하기`)
+    : null;
 
+  // 오늘 두 일차를 다 했음
   if (!can) {
-    const d = describeDay(day, lessonWords, ctx);
     return h('div', { class: 'card tape today-card' },
-      h('div', { class: 'badge-label' }, `Lesson ${lesson.order} · ${lesson.title}`),
+      header,
       dayTracker(plan, null),
-      h('div', { class: 'stamp small done-stamp-mini' }, `${lastDone}일차`, h('br'), '완료'),
+      stamp,
       h('p', { class: 'today-sub' }, '오늘 학습 끝! 내일은 ', h('b', {}, `${day}일차 · ${d.range}`), ' 예요.'),
+      h('div', { class: 'btn-col' }, reviewBtn, replayBtn),
+    );
+  }
+
+  // 오늘 한 일차를 했고, 하나 더 할 수 있음
+  if (doneToday > 0) {
+    return h('div', { class: 'card tape today-card' },
+      header,
+      dayTracker(plan, day),
+      stamp,
+      h('p', { class: 'today-sub' }, '잘했어요! 시간이 있으면 오늘 ', h('b', {}, '한 일차 더'), ' 할 수 있어요.', h('br'), `${day}일차 · ${d.range} · ${d.count}단어`),
       h('div', { class: 'btn-col' },
-        h('button', { class: 'btn sky', onclick: () => app.go('quiz', { kind: 'daily' }) }, '복습 한 판 더'),
-        h('button', { class: 'btn white small', onclick: () => app.go('quiz', { kind: 'plan', lessonId: lesson.id, day: lastDone, replay: true }) }, `${lastDone}일차 다시 하기`),
+        h('button', { class: 'btn', onclick: () => app.go('quiz', { kind: 'plan', lessonId: lesson.id, day }) },
+          `${day}일차 이어서 하기`, h('span', { 'aria-hidden': 'true' }, '→')),
+        reviewBtn,
+        replayBtn,
       ),
     );
   }
 
-  const d = describeDay(day, lessonWords, ctx);
   return h('div', { class: 'card tape today-card' },
-    h('div', { class: 'badge-label' }, `Lesson ${lesson.order} · ${lesson.title}`),
+    header,
     dayTracker(plan, day),
     h('div', { class: 'today-count' }, `${day}`, h('small', {}, '일차')),
     h('p', { class: 'today-sub' }, `${d.range} · ${d.count}단어`),
@@ -84,7 +105,11 @@ export function showHome(app) {
 
   let greeting;
   let mood = 'normal';
-  if (planLesson && canStartNewDay(st.plans[planLesson.id] ?? emptyPlan(), today)) {
+  const plansDoneToday = daysDoneOn(st.plans, today);
+  if (planLesson && plansDoneToday > 0 && canStartNewDay(st.plans[planLesson.id] ?? emptyPlan(), today, plansDoneToday)) {
+    greeting = '오늘 계획 하나 완료! 여유가 있으면 다음 일차도 해 볼까요?';
+    mood = 'happy';
+  } else if (planLesson && canStartNewDay(st.plans[planLesson.id] ?? emptyPlan(), today, plansDoneToday)) {
     const day = nextDay(st.plans[planLesson.id] ?? emptyPlan());
     greeting = day === 1
       ? `Lesson ${planLesson.order} 시작! 5일 동안 단어를 하나도 빠짐없이 외워 봐요.`

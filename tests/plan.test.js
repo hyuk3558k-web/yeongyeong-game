@@ -4,8 +4,19 @@ import { createRng, chance } from '../app/js/random.js';
 import { applyResult, newProgress } from '../app/js/scheduler.js';
 import {
   PlanSession, dayWords, lessonWordsSorted, emptyPlan, completeDay, nextDay, canStartNewDay,
-  currentPlanLesson, isPlanDone, MAX_REPEAT_ROUNDS, MIN_DAY4_WORDS,
+  currentPlanLesson, isPlanDone, MAX_REPEAT_ROUNDS, MIN_DAY4_WORDS, daysDoneOn, MAX_DAYS_PER_DATE,
 } from '../app/js/plan.js';
+
+test('하루 두 일차 제한은 레슨을 합쳐서 센다 (Lesson 5 5일차 + Lesson 6 1일차 = 2)', () => {
+  const plans = {
+    L05: { completedDays: [1, 2, 3, 4, 5], dayDates: { 4: '2026-10-05', 5: '2026-10-06' }, lastDayDate: '2026-10-06' },
+    L06: emptyPlan(),
+  };
+  assert.equal(daysDoneOn(plans, '2026-10-06'), 1);
+  assert.ok(canStartNewDay(plans.L06, '2026-10-06', daysDoneOn(plans, '2026-10-06')));
+  plans.L06 = completeDay(plans.L06, 1, '2026-10-06', []);
+  assert.ok(!canStartNewDay(plans.L06, '2026-10-06', daysDoneOn(plans, '2026-10-06')));
+});
 import { lesson5, idOf } from './fixtures/lesson5.js';
 
 const TODAY = '2026-10-06';
@@ -174,10 +185,13 @@ test('계획 진행: 하루에 한 일차, 5일차 후 완료, 3일차 오답 �
   assert.ok(canStartNewDay(plan, TODAY));
   plan = completeDay(plan, 1, TODAY, []);
   assert.equal(nextDay(plan), 2);
-  assert.ok(!canStartNewDay(plan, TODAY), '같은 날 다음 일차는 못 함');
-  assert.ok(canStartNewDay(plan, '2026-10-07'));
-  plan = completeDay(plan, 2, '2026-10-07', []);
-  plan = completeDay(plan, 3, '2026-10-08', [idOf('wish')]);
+  assert.equal(daysDoneOn({ L05: plan }, TODAY), 1);
+  assert.ok(canStartNewDay(plan, TODAY, 1), '같은 날 한 일차 더 가능');
+  plan = completeDay(plan, 2, TODAY, []);
+  assert.equal(daysDoneOn({ L05: plan }, TODAY), 2);
+  assert.ok(!canStartNewDay(plan, TODAY, 2), `하루 최대 ${MAX_DAYS_PER_DATE}일차`);
+  assert.ok(canStartNewDay(plan, '2026-10-07', daysDoneOn({ L05: plan }, '2026-10-07')));
+  plan = completeDay(plan, 3, '2026-10-07', [idOf('wish')]);
   assert.deepEqual(plan.day3Wrong, [idOf('wish')]);
   plan = completeDay(plan, 4, '2026-10-09', []);
   plan = completeDay(plan, 5, '2026-10-10', []);

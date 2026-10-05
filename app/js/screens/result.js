@@ -6,7 +6,7 @@ import { speak, canSpeak } from '../speech.js';
 import { displayStreak } from '../storage.js';
 import { randomFloat } from '../random.js';
 import { praiseFor, pickQuote, QUOTES } from '../praise.js';
-import { STAGE_LABEL, PLAN_DAYS, describeDay, lessonWordsSorted, nextDay, emptyPlan } from '../plan.js';
+import { STAGE_LABEL, PLAN_DAYS, describeDay, lessonWordsSorted, nextDay, emptyPlan, canStartNewDay, daysDoneOn } from '../plan.js';
 
 function wordChip(word) {
   return h('span', { class: 'word-chip' }, word,
@@ -39,7 +39,9 @@ export function showResult(app, { summary, seconds, newlyMastered = [], improved
     const nd = nextDay(p);
     if (nd && !plan.replay) {
       const d = describeDay(nd, lessonWordsSorted(app.words, plan.lessonId), { plan: p, progress: app.state.words, rng: app.rng });
-      tomorrow = h('p', { class: 'muted', style: { margin: '10px 0 0', fontSize: '15px' } }, `내일은 ${nd}일차 · ${d.range} (${d.count}단어)`);
+      const more = canStartNewDay(p, today, daysDoneOn(app.state.plans, today));
+      tomorrow = h('p', { class: 'muted', style: { margin: '10px 0 0', fontSize: '15px' } },
+        more ? `다음은 ${nd}일차 · ${d.range} (${d.count}단어) — 원하면 오늘 이어서 할 수 있어요` : `내일은 ${nd}일차 · ${d.range} (${d.count}단어)`);
     } else if (plan.done) {
       tomorrow = h('p', { class: 'muted', style: { margin: '10px 0 0', fontSize: '15px' } }, `${PLAN_DAYS}일 계획 끝! 이제 매일 복습으로 오래 기억해요.`);
     }

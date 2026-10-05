@@ -70,7 +70,7 @@ export function praiseFor({ streak = 1, ratio = 0, improved = 0, asked = 0, plan
 
   if (streak >= 7) lines.push(`벌써 ${streak}일 연속이에요! 이렇게 매일 하는 힘이 진짜 실력이 돼요.`);
   else if (streak >= 2) lines.push(`${streak}일째 꾸준히 하고 있어요. 내일도 영영이가 기다릴게요!`);
-  else if (planDay && planDay < 5) lines.push(`내일은 ${planDay + 1}일차예요. 내일도 같이 해요!`);
+  else if (planDay && planDay < 5) lines.push(`다음은 ${planDay + 1}일차예요. 영영이가 기다릴게요!`);
   else lines.push('오늘 시작한 한 걸음이 내일의 큰 힘이 돼요.');
   return lines;
 }

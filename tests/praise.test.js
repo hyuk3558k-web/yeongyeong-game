@@ -27,6 +27,6 @@ test('칭찬은 상황에 맞게 두 문장', () => {
 
   assert.match(praiseFor({ planDone: true, streak: 5 }, rand)[0], /5일 계획/);
   assert.match(praiseFor({ ratio: 0.3, streak: 1, planDay: 2 }, rand)[0], /끝까지|더 많이 배운/);
-  assert.match(praiseFor({ ratio: 0.3, streak: 1, planDay: 2 }, rand)[1], /내일은 3일차/);
+  assert.match(praiseFor({ ratio: 0.3, streak: 1, planDay: 2 }, rand)[1], /다음은 3일차/);
   assert.match(praiseFor({ streak: 10, ratio: 1 }, rand)[1], /10일 연속/);
 });

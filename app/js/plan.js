@@ -49,9 +49,16 @@ export function isPlanDone(plan) {
   return nextDay(plan) === null;
 }
 
-// 하루에 한 일차씩만 새로 진행한다
-export function canStartNewDay(plan, today) {
-  return !isPlanDone(plan) && plan?.lastDayDate !== today;
+// 하루에 최대 두 일차까지 (부모 요청 2026-10-05: 수행평가 전에 따라잡을 수 있게)
+export const MAX_DAYS_PER_DATE = 2;
+
+// 오늘 끝낸 일차 수 (모든 레슨 합계)
+export function daysDoneOn(plans, today) {
+  return Object.values(plans ?? {}).reduce((n, p) => n + Object.values(p?.dayDates ?? {}).filter((d) => d === today).length, 0);
+}
+
+export function canStartNewDay(plan, today, doneToday = plan?.lastDayDate === today ? 1 : 0) {
+  return !isPlanDone(plan) && doneToday < MAX_DAYS_PER_DATE;
 }
 
 export function completeDay(plan, day, today, wrongIds) {
