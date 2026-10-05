@@ -8,7 +8,16 @@ import { timeLimitMs, createCountdown } from '../timer.js';
 import { countNewIntroduced, newIntroducedToday, recordSessionComplete } from '../storage.js';
 import { PlanSession, dayWords, lessonWordsSorted, completeDay, emptyPlan, isPlanDone, STAGE_LABEL } from '../plan.js';
 import { play } from '../sound.js';
-import { speak, canSpeak } from '../speech.js';
+import { speak, canSpeak, preloadWord } from '../speech.js';
+
+// 정답·오답 뒤에 읽어 줄 말: 빈칸 철자 문제는 문장 속 형태(woke up), 나머지는 기본형
+function spokenText(q, word) {
+  return q.format === 'cloze' && q.mode === 'spelling' ? q.answer : word.word;
+}
+
+function autoSpeak(app, text, delaySec) {
+  if (app.state.settings.sound) speak(text, delaySec);
+}
 
 const GOOD_TITLES = ['정답! 🎉', '좋아요! ✨', '바로 그거예요!', '완벽해요! 👏'];
 const MAX_WRONG_PRACTICE = 15;
@@ -268,6 +277,9 @@ export function startQuiz(app, params = {}) {
       answerArea,
     ));
 
+    // 정답·오답 때 바로 읽을 수 있게 발음 파일을 미리 불러 둔다
+    preloadWord(spokenText(q, app.byId.get(q.wordId)));
+
     countdown = createCountdown(timeLimitMs(q.mode, q.format, preset));
     lastShownSec = -1;
     active = true;
@@ -415,12 +427,14 @@ export function startQuiz(app, params = {}) {
         h('div', {},
           h('span', { class: `answer-word ${answered.format === 'korean' ? 'ko' : 'en'}` }, shown),
           answered.format === 'korean' ? h('div', { class: 'answer-base en' }, word.word) : null),
-        speakButton(word.word)),
+        speakButton(spokenText(answered, word))),
     );
     const go = () => renderQuestion();
     backdrop.addEventListener('click', go);
     el.addEventListener('click', go);
-    autoNext = setTimeout(go, assisted ? 1800 : 1200);
+    autoSpeak(app, spokenText(answered, word), 0.3);
+    // 단어를 다 듣고 넘어가도록 조금 더 머문다
+    autoNext = setTimeout(go, assisted ? 2400 : 2000);
   }
 
   function showBad(answered, { timeout, typed, canClaim = false }) {
@@ -473,7 +487,7 @@ export function startQuiz(app, params = {}) {
             ? [h('div', { class: 'answer-word ko' }, word.koMeanings.join(', ')), h('div', { class: 'answer-base en' }, word.word)]
             : [h('div', { class: 'answer-word en' }, answered.answer),
                answered.answer.toLowerCase() !== word.word.toLowerCase() ? h('div', { class: 'answer-base' }, `기본형: ${word.word}`) : null]),
-        speakButton(word.word)),
+        speakButton(spokenText(answered, word))),
       compare,
       h('div', { class: 'learn-box' },
         isKo ? null : [h('span', { class: 'label' }, '한글 뜻'), h('p', { style: { margin: 0, fontWeight: 700 } }, (word.koMeanings ?? []).join(', '))],
@@ -484,7 +498,7 @@ export function startQuiz(app, params = {}) {
       okBtn,
       claimBtn,
     );
-    if (app.state.settings.sound) setTimeout(() => speak(word.word), 350);
+    autoSpeak(app, spokenText(answered, word), 0.45);
     setTimeout(() => okBtn.focus(), 50);
   }
 
