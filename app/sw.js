@@ -2,7 +2,7 @@
 // - 앱 파일: 미리 저장해 두고 캐시 우선 (배포할 때마다 VERSION을 올려 새 파일로 교체)
 // - 단어장(data/words.json): 네트워크 우선 → 새 레슨이 바로 반영, 인터넷이 없으면 저장본
 // - 글꼴(Google Fonts): 처음 받은 뒤 저장해 두고 사용
-const VERSION = 'v2';
+const VERSION = 'v3';
 const APP_CACHE = `yy-app-${VERSION}`;
 const DATA_CACHE = 'yy-data';
 const FONT_CACHE = 'yy-fonts';
