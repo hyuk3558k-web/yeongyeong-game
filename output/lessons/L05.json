@@ -1,0 +1,914 @@
+{
+  "lessonId": "L05",
+  "title": "Have a Special Day!",
+  "order": 5,
+  "approvedAt": "2026-10-05T14:37:23.936Z",
+  "words": [
+    {
+      "id": "L05-a-little",
+      "lessonId": "L05",
+      "word": "a little",
+      "sourceOrder": 1,
+      "pos": "phrase",
+      "definitions": [
+        {
+          "text": "a small amount",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "I turned my head a little.",
+          "clozeText": "I turned my head ____.",
+          "clozeAnswer": "a little",
+          "clozeConfusable": []
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "약간",
+        "조금"
+      ],
+      "koAccepted": [
+        "약간의",
+        "조금의",
+        "좀"
+      ],
+      "confusableWith": []
+    },
+    {
+      "id": "L05-a-lot-of",
+      "lessonId": "L05",
+      "word": "a lot of",
+      "sourceOrder": 2,
+      "pos": "phrase",
+      "definitions": [
+        {
+          "text": "a large number or amount of somebody/something",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "He has a lot of friends.",
+          "clozeText": "He has ____ friends.",
+          "clozeAnswer": "a lot of",
+          "clozeConfusable": []
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "많은"
+      ],
+      "koAccepted": [
+        "많이",
+        "다수의",
+        "많음"
+      ],
+      "confusableWith": []
+    },
+    {
+      "id": "L05-beach",
+      "lessonId": "L05",
+      "word": "beach",
+      "sourceOrder": 3,
+      "pos": "noun",
+      "definitions": [
+        {
+          "text": "an area of sand or small stones, next to the sea or a lake",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "We had a picnic on the beach.",
+          "clozeText": "We had a picnic on the ____.",
+          "clozeAnswer": "beach",
+          "clozeConfusable": [
+            "L05-mountain",
+            "L05-ocean"
+          ]
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "해변"
+      ],
+      "koAccepted": [
+        "바닷가",
+        "해안",
+        "모래사장"
+      ],
+      "confusableWith": [
+        "L05-ocean",
+        "L05-wave"
+      ]
+    },
+    {
+      "id": "L05-delicious",
+      "lessonId": "L05",
+      "word": "delicious",
+      "sourceOrder": 4,
+      "pos": "adj",
+      "definitions": [
+        {
+          "text": "very pleasant to taste",
+          "source": "handout"
+        },
+        {
+          "text": "tasting very good",
+          "source": "paraphrase"
+        }
+      ],
+      "examples": [
+        {
+          "text": "The cake was delicious.",
+          "clozeText": "The cake was ____.",
+          "clozeAnswer": "delicious",
+          "clozeConfusable": []
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "맛있는"
+      ],
+      "koAccepted": [
+        "맛있다",
+        "맛있음"
+      ],
+      "confusableWith": []
+    },
+    {
+      "id": "L05-hike",
+      "lessonId": "L05",
+      "word": "hike",
+      "sourceOrder": 5,
+      "pos": "verb",
+      "definitions": [
+        {
+          "text": "to go for a long walk in the forest or the mountains",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "After hiking the mountain, I was so tired.",
+          "clozeText": "After ____ the mountain, I was so tired.",
+          "clozeAnswer": "hiking",
+          "clozeConfusable": []
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "등산하다"
+      ],
+      "koAccepted": [
+        "등산",
+        "하이킹하다",
+        "하이킹",
+        "도보 여행하다"
+      ],
+      "confusableWith": [
+        "L05-mountain"
+      ]
+    },
+    {
+      "id": "L05-hope",
+      "lessonId": "L05",
+      "word": "hope",
+      "sourceOrder": 6,
+      "pos": "verb",
+      "definitions": [
+        {
+          "text": "to want something to happen or be true and to believe that it is possible or likely",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "I hope to learn a new language.",
+          "clozeText": "I ____ to learn a new language.",
+          "clozeAnswer": "hope",
+          "clozeConfusable": [
+            "L05-wish",
+            "L05-like"
+          ]
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "바라다",
+        "기대하다"
+      ],
+      "koAccepted": [
+        "희망하다",
+        "희망",
+        "바람"
+      ],
+      "confusableWith": [
+        "L05-wish"
+      ]
+    },
+    {
+      "id": "L05-lighthouse",
+      "lessonId": "L05",
+      "word": "lighthouse",
+      "sourceOrder": 7,
+      "pos": "noun",
+      "definitions": [
+        {
+          "text": "a tower with a powerful flashing light that guides ships away from danger",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "She plans to visit the lighthouse.",
+          "clozeText": "She plans to visit the ____.",
+          "clozeAnswer": "lighthouse",
+          "clozeConfusable": [
+            "L05-observatory",
+            "L05-beach",
+            "L05-mountain",
+            "L05-ocean"
+          ]
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "등대"
+      ],
+      "koAccepted": [],
+      "confusableWith": []
+    },
+    {
+      "id": "L05-like",
+      "lessonId": "L05",
+      "word": "like",
+      "sourceOrder": 8,
+      "pos": "verb",
+      "definitions": [
+        {
+          "text": "similar to; to enjoy something or think that it is nice or good",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "She runs fast like a cheetah.",
+          "clozeText": "She runs fast ____ a cheetah.",
+          "clozeAnswer": "like",
+          "clozeConfusable": []
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "~와 같은",
+        "좋아하다"
+      ],
+      "koAccepted": [
+        "같은",
+        "~처럼",
+        "처럼",
+        "좋아함"
+      ],
+      "confusableWith": []
+    },
+    {
+      "id": "L05-moment",
+      "lessonId": "L05",
+      "word": "moment",
+      "sourceOrder": 9,
+      "pos": "noun",
+      "definitions": [
+        {
+          "text": "a very short period of time",
+          "source": "handout"
+        },
+        {
+          "text": "a very small amount of time",
+          "source": "paraphrase"
+        }
+      ],
+      "examples": [
+        {
+          "text": "I enjoyed the peaceful moment.",
+          "clozeText": "I enjoyed the peaceful ____.",
+          "clozeAnswer": "moment",
+          "clozeConfusable": [
+            "L05-trip",
+            "L05-sunrise",
+            "L05-beach"
+          ]
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "순간"
+      ],
+      "koAccepted": [
+        "잠깐",
+        "잠시"
+      ],
+      "confusableWith": []
+    },
+    {
+      "id": "L05-mountain",
+      "lessonId": "L05",
+      "word": "mountain",
+      "sourceOrder": 10,
+      "pos": "noun",
+      "definitions": [
+        {
+          "text": "a very high hill",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "I want to climb the mountain.",
+          "clozeText": "I want to climb the ____.",
+          "clozeAnswer": "mountain",
+          "clozeConfusable": [
+            "L05-rock",
+            "L05-lighthouse"
+          ]
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "산"
+      ],
+      "koAccepted": [],
+      "confusableWith": [
+        "L05-hike"
+      ]
+    },
+    {
+      "id": "L05-observatory",
+      "lessonId": "L05",
+      "word": "observatory",
+      "sourceOrder": 11,
+      "pos": "noun",
+      "definitions": [
+        {
+          "text": "a special building from which scientists watch the moon, stars, weather, etc.",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "I saw the river from the observatory.",
+          "clozeText": "I saw the river from the ____.",
+          "clozeAnswer": "observatory",
+          "clozeConfusable": [
+            "L05-lighthouse",
+            "L05-mountain",
+            "L05-rock"
+          ]
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "천문대",
+        "전망대"
+      ],
+      "koAccepted": [
+        "관측소",
+        "기상대"
+      ],
+      "koNote": "아이 필기는 \"전망대\". 풀이(과학자가 달·별·날씨를 관찰)에 맞는 뜻은 \"천문대·관측소\"라 함께 넣음",
+      "confusableWith": []
+    },
+    {
+      "id": "L05-ocean",
+      "lessonId": "L05",
+      "word": "ocean",
+      "sourceOrder": 12,
+      "pos": "noun",
+      "definitions": [
+        {
+          "text": "a large area of saltwater that covers much of the Earth's surface",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "The ocean is salty and blue.",
+          "clozeText": "The ____ is salty and blue.",
+          "clozeAnswer": "ocean",
+          "clozeConfusable": [
+            "L05-wave"
+          ]
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "바다",
+        "대양"
+      ],
+      "koAccepted": [
+        "해양"
+      ],
+      "confusableWith": [
+        "L05-beach",
+        "L05-wave"
+      ]
+    },
+    {
+      "id": "L05-push",
+      "lessonId": "L05",
+      "word": "push",
+      "sourceOrder": 13,
+      "pos": "verb",
+      "definitions": [
+        {
+          "text": "to make something move forward with your body",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "He pushed the shopping cart.",
+          "clozeText": "He ____ the shopping cart.",
+          "clozeAnswer": "pushed",
+          "clozeConfusable": [
+            "L05-shake",
+            "L05-turn",
+            "L05-like"
+          ]
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "밀다"
+      ],
+      "koAccepted": [
+        "누르다"
+      ],
+      "confusableWith": []
+    },
+    {
+      "id": "L05-put-up",
+      "lessonId": "L05",
+      "word": "put up",
+      "sourceOrder": 14,
+      "pos": "phrase",
+      "definitions": [
+        {
+          "text": "to build something such as a wall, fence, building, etc.",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "They put up a tent for camping.",
+          "clozeText": "They ____ a tent for camping.",
+          "clozeAnswer": "put up",
+          "clozeConfusable": []
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "치다",
+        "설치하다"
+      ],
+      "koAccepted": [
+        "세우다",
+        "짓다",
+        "(텐트를) 치다"
+      ],
+      "koNote": "아이 필기 일부가 흐림 — \"치다, 설치하다\"로 읽음",
+      "confusableWith": []
+    },
+    {
+      "id": "L05-rise",
+      "lessonId": "L05",
+      "word": "rise",
+      "sourceOrder": 15,
+      "pos": "verb",
+      "definitions": [
+        {
+          "text": "to appear in the sky; to move upward",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "The sun will rise at 6:00 A.M. tomorrow.",
+          "clozeText": "The sun will ____ at 6:00 A.M. tomorrow.",
+          "clozeAnswer": "rise",
+          "clozeConfusable": [
+            "L05-shine"
+          ]
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "(해·달이) 뜨다",
+        "오르다"
+      ],
+      "koAccepted": [
+        "떠오르다",
+        "올라가다",
+        "솟다"
+      ],
+      "confusableWith": [
+        "L05-sunrise"
+      ]
+    },
+    {
+      "id": "L05-rock",
+      "lessonId": "L05",
+      "word": "rock",
+      "sourceOrder": 16,
+      "pos": "noun",
+      "definitions": [
+        {
+          "text": "the hard substance that forms the main surface of the Earth",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "We took a picture in front of the big rock.",
+          "clozeText": "We took a picture in front of the big ____.",
+          "clozeAnswer": "rock",
+          "clozeConfusable": [
+            "L05-mountain",
+            "L05-lighthouse",
+            "L05-observatory",
+            "L05-wave"
+          ]
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "바위"
+      ],
+      "koAccepted": [
+        "암석",
+        "돌"
+      ],
+      "confusableWith": []
+    },
+    {
+      "id": "L05-scary",
+      "lessonId": "L05",
+      "word": "scary",
+      "sourceOrder": 17,
+      "pos": "adj",
+      "definitions": [
+        {
+          "text": "causing fear or making someone feel afraid",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "The movie is really scary.",
+          "clozeText": "The movie is really ____.",
+          "clozeAnswer": "scary",
+          "clozeConfusable": []
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "무서운",
+        "겁나는"
+      ],
+      "koAccepted": [
+        "무섭다",
+        "겁나다"
+      ],
+      "confusableWith": []
+    },
+    {
+      "id": "L05-september",
+      "lessonId": "L05",
+      "word": "September",
+      "sourceOrder": 18,
+      "pos": "noun",
+      "definitions": [
+        {
+          "text": "the ninth month of the year, between August and October",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "My birthday is in September.",
+          "clozeText": "My birthday is in ____.",
+          "clozeAnswer": "September",
+          "clozeConfusable": []
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "9월"
+      ],
+      "koAccepted": [
+        "구월"
+      ],
+      "confusableWith": []
+    },
+    {
+      "id": "L05-shake",
+      "lessonId": "L05",
+      "word": "shake",
+      "sourceOrder": 19,
+      "pos": "verb",
+      "definitions": [
+        {
+          "text": "to make movements from side to side or up and down",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "Leaves shake in the wind.",
+          "clozeText": "Leaves ____ in the wind.",
+          "clozeAnswer": "shake",
+          "clozeConfusable": [
+            "L05-turn",
+            "L05-wave",
+            "L05-rise"
+          ]
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "흔들다"
+      ],
+      "koAccepted": [
+        "흔들리다",
+        "떨다"
+      ],
+      "confusableWith": []
+    },
+    {
+      "id": "L05-shine",
+      "lessonId": "L05",
+      "word": "shine",
+      "sourceOrder": 20,
+      "pos": "verb",
+      "definitions": [
+        {
+          "text": "to point a light towards somewhere to see in that direction",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "The flashlight shines its light in the dark.",
+          "clozeText": "The flashlight ____ its light in the dark.",
+          "clozeAnswer": "shines",
+          "clozeConfusable": []
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "비추다"
+      ],
+      "koAccepted": [
+        "빛나다",
+        "비치다"
+      ],
+      "confusableWith": []
+    },
+    {
+      "id": "L05-steep",
+      "lessonId": "L05",
+      "word": "steep",
+      "sourceOrder": 21,
+      "pos": "adj",
+      "definitions": [
+        {
+          "text": "rising or falling sharply",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "The hill is steep, so be careful.",
+          "clozeText": "The hill is ____, so be careful.",
+          "clozeAnswer": "steep",
+          "clozeConfusable": [
+            "L05-scary"
+          ]
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "가파른"
+      ],
+      "koAccepted": [
+        "가파르다",
+        "경사가 급한"
+      ],
+      "confusableWith": []
+    },
+    {
+      "id": "L05-sunrise",
+      "lessonId": "L05",
+      "word": "sunrise",
+      "sourceOrder": 22,
+      "pos": "noun",
+      "definitions": [
+        {
+          "text": "the time when the sun starts to appear in the morning",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "The sunrise over the sea was beautiful.",
+          "clozeText": "The ____ over the sea was beautiful.",
+          "clozeAnswer": "sunrise",
+          "clozeConfusable": []
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "일출",
+        "해돋이"
+      ],
+      "koAccepted": [],
+      "confusableWith": [
+        "L05-rise"
+      ]
+    },
+    {
+      "id": "L05-trip",
+      "lessonId": "L05",
+      "word": "trip",
+      "sourceOrder": 23,
+      "pos": "noun",
+      "definitions": [
+        {
+          "text": "a journey to a place",
+          "source": "handout"
+        },
+        {
+          "text": "when you go somewhere and then come back",
+          "source": "paraphrase"
+        }
+      ],
+      "examples": [
+        {
+          "text": "I'm excited about the trip.",
+          "clozeText": "I'm excited about the ____.",
+          "clozeAnswer": "trip",
+          "clozeConfusable": [
+            "L05-hike"
+          ]
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "여행"
+      ],
+      "koAccepted": [
+        "여행하다",
+        "소풍"
+      ],
+      "confusableWith": []
+    },
+    {
+      "id": "L05-turn",
+      "lessonId": "L05",
+      "word": "turn",
+      "sourceOrder": 24,
+      "pos": "verb",
+      "definitions": [
+        {
+          "text": "to change into a different state or condition; to move your body so that you are looking in a different direction",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "The leaves turn red in autumn.",
+          "clozeText": "The leaves ____ red in autumn.",
+          "clozeAnswer": "turn",
+          "clozeConfusable": [
+            "L05-shine"
+          ]
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "변하다",
+        "돌다"
+      ],
+      "koAccepted": [
+        "바뀌다",
+        "돌리다",
+        "되다"
+      ],
+      "confusableWith": []
+    },
+    {
+      "id": "L05-wake-up",
+      "lessonId": "L05",
+      "word": "wake up",
+      "sourceOrder": 25,
+      "pos": "phrase",
+      "definitions": [
+        {
+          "text": "to stop sleeping, or to make someone stop sleeping",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "I woke up late this morning.",
+          "clozeText": "I ____ late this morning.",
+          "clozeAnswer": "woke up",
+          "clozeConfusable": [
+            "L05-hike",
+            "L05-rise"
+          ]
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "(잠에서) 깨다",
+        "깨우다"
+      ],
+      "koAccepted": [
+        "일어나다",
+        "잠이 깨다",
+        "깨어나다"
+      ],
+      "confusableWith": []
+    },
+    {
+      "id": "L05-wave",
+      "lessonId": "L05",
+      "word": "wave",
+      "sourceOrder": 26,
+      "pos": "noun",
+      "definitions": [
+        {
+          "text": "a line of raised water that moves across the surface of the sea",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "The children played in the waves at the beach.",
+          "clozeText": "The children played in the ____ at the beach.",
+          "clozeAnswer": "waves",
+          "clozeConfusable": [
+            "L05-ocean"
+          ]
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "파도",
+        "물결"
+      ],
+      "koAccepted": [],
+      "confusableWith": [
+        "L05-beach",
+        "L05-ocean"
+      ]
+    },
+    {
+      "id": "L05-wish",
+      "lessonId": "L05",
+      "word": "wish",
+      "sourceOrder": 27,
+      "pos": "noun",
+      "definitions": [
+        {
+          "text": "a desire or hope for something to happen",
+          "source": "handout"
+        }
+      ],
+      "examples": [
+        {
+          "text": "The boy made a wish for his birthday.",
+          "clozeText": "The boy made a ____ for his birthday.",
+          "clozeAnswer": "wish",
+          "clozeConfusable": [
+            "L05-trip"
+          ]
+        }
+      ],
+      "acceptedAnswers": [],
+      "koMeanings": [
+        "소원"
+      ],
+      "koAccepted": [
+        "바람",
+        "소망"
+      ],
+      "confusableWith": [
+        "L05-hope"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# 유인물 사진·검토 자료는 개인정보(학교·이름)가 있어 절대 커밋하지 않는다
+input/
+output/work/
+output/review/
+*.jpg
+*.jpeg
+*.png
+*.heic
+*.HEIC
+*.JPG
+*.PNG
+# 앱 아이콘 등 공개해도 되는 이미지는 app/assets 아래에만 둔다
+!app/assets/**/*.png
+
+node_modules/
+.DS_Store

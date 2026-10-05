@@ -1,0 +1,9 @@
+{
+  "name": "yeongyeong-game",
+  "private": true,
+  "type": "module",
+  "description": "영영게임 - 영영풀이·예문 빈칸으로 단어를 외우는 게임",
+  "scripts": {
+    "test": "node --test"
+  }
+}
